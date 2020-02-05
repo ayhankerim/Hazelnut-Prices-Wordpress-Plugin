@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Fındık TV
-Plugin URI: http://www.kerimayhan.com.tr/
+Plugin URI: https://kerim.ist/
 Description: Show hazelnut prices.
 Version: 1.0
 Date: 22 March 2017
 Author: Kerim Ayhan <info@findiktv.com>
-Author URI: http://www.kerimayhan.com.tr/contact.php
+Author URI: https://kerim.ist/
 */
 
 if( ! function_exists('findiktvfindikdiyatlari') )
@@ -193,19 +193,7 @@ return $fiyatcontent;
 }
 add_shortcode('FiyatlarList', 'FiyatlarList');
 
-function PriceReklam(){
-	$reklam = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'.
-				'<ins class="adsbygoogle"'.
-					 'style="display:block; text-align:center;"'.
-					 'data-ad-format="fluid"'.
-					 'data-ad-layout="in-article"'.
-					 'data-ad-client="ca-pub-8250381408951199"'.
-					 'data-ad-slot="7542244268"></ins>'.
-				'<script>'.
-					 '(adsbygoogle = window.adsbygoogle || []).push({});'.
-				'</script>';
-	return $reklam;
-}
+
 function SehirFiyatSiteneEkle($atts, $content=null){
 	$city = $atts['city'];
 	if($city == "AKÇAKOCA"){ $city = "AKOCA";}
@@ -440,9 +428,6 @@ function FiyatlarListNew($atts, $content=null){
       '<li class="cell2">'. prices('KOCAEL', 'highest').' TL</li>'.
 	  '<li class="cell2"><span class="PriceChangeRate">'. pricechange('KOCAEL', 'lowest') .'% </span><i class="fa fa-'. pricedirection('KOCAEL', 'lowest').'"></i></li>'.
 	  '<li class="cell1"><a href="https://www.findiktv.com/urunler/findik-fiyatlari/kocaeli-findik-fiyatlari" title="Kocaeli Detaylı Fındık Raporları"><i class="fa fa-lg fa-info-circle" aria-hidden="true"></i></a></li>'.
-    '</ul>'.
-    '<ul>'.
-      '<li class="cell12">' . PriceReklam() . '</li>'.
     '</ul>'.
     '<ul>'.
       '<li class="cell3 tal"><a href="https://www.findiktv.com/urunler/findik-fiyatlari/ordu-findik-fiyatlari" title="Ordu Detaylı Fındık Raporları">ORDU</a></li>'.
